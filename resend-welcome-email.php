@@ -83,8 +83,8 @@ if ( !class_exists( 'Resend_Welcome_Email' )) {
 			
 			?>
 			<tr>
-				<th scope="row"><?php _e( 'Reset Password and Send Welcome Email',  'user-switching' ); ?></th>
-				<td><a href="<?php echo $link; ?>"><?php _e( 'Reset Password and Send Welcome Email', 'user-switching' ); ?></a></td>
+				<th scope="row"><?php _e( 'Resend Welcome Email',  'user-switching' ); ?></th>
+				<td><a href="<?php echo $link; ?>"><?php _e( 'Resend Welcome Email', 'user-switching' ); ?></a></td>
 			</tr>
 			<?php
 		}
@@ -144,13 +144,7 @@ if ( !class_exists( 'Resend_Welcome_Email' )) {
 				return false;
 			}
 			
-			// Generate a password
-			$password = substr(md5(uniqid(microtime())), 0, 7);
-			$user_info = get_userdata($user_id);
-
-			wp_update_user(array('ID' => $user_id, 'user_pass' => $password));
-	
-			wp_new_user_notification($user_id, $password);
+			wp_new_user_notification($user_id, null, 'both');
 
 		}
 		

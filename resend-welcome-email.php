@@ -124,10 +124,10 @@ if ( !class_exists( 'Resend_Welcome_Email' )) {
 		 */
 		public static function send_welcome_email_url( WP_User $user ) {
 
-			return wp_nonce_url( add_query_arg( array(
+			return esc_url(wp_nonce_url( add_query_arg( array(
 				'action'  => 'resend_welcome_email',
 				'user_id' => $user->ID
-			), '') , "send_welcome_email_{$user->ID}" );
+			), '') , "send_welcome_email_{$user->ID}" ));
 
 		}
 		

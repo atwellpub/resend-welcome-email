@@ -83,7 +83,7 @@ if ( !class_exists( 'Resend_Welcome_Email' )) {
 			
 			?>
 			<tr>
-				<th scope="row"><?php _e( 'Reset Password and Send Welcome Email',  'user-switching' ); ?></th>
+				<th scope="row"><?php _e( 'Resend Welcome Email',  'user-switching' ); ?></th>
 				<td><a href="<?php echo $link; ?>"><?php _e( 'Resend Welcome Email', 'user-switching' ); ?></a></td>
 			</tr>
 			<?php

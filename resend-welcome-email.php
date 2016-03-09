@@ -144,13 +144,7 @@ if ( !class_exists( 'Resend_Welcome_Email' )) {
 				return false;
 			}
 			
-			// Generate a password
-			$password = substr(md5(uniqid(microtime())), 0, 7);
-			$user_info = get_userdata($user_id);
-
-			wp_update_user(array('ID' => $user_id, 'user_pass' => $password));
-	
-			wp_new_user_notification($user_id, $password);
+			wp_new_user_notification($user_id, null, 'both');
 
 		}
 		

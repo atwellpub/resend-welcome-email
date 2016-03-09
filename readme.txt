@@ -7,7 +7,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: users, welcome-email , user-mangement, support
 Requires at least: 3.8
 Tested up to: 4.0
-Stable Tag: 1.0.1
+Stable Tag: 1.0.2
 
 Quickly create a new password and send a welcome email for a user through the user's profile edit area. 
 
@@ -37,6 +37,10 @@ No. But we have a public github and we do offer paid support. Contact the plugin
 
 
 == Changelog ==
+
+= 1.0.2 =
+
+wp_new_user_notification() stopped sending passwords via email, and instead it sends a reset password link.
 
 = 1.0.1 =
 

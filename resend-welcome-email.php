@@ -3,7 +3,7 @@
 Plugin Name: Resend Welcome Email
 Plugin URI: http://www.twitter.com/atwellpub
 Description: Adds option to regenerate and resend password to user. Adds this option to user profile edit screen. 
-Version: 1.0.1
+Version: 1.0.2
 Author: adbox
 Author URI: http://www.twitter.com/atwellpub
 *
@@ -83,8 +83,8 @@ if ( !class_exists( 'Resend_Welcome_Email' )) {
 			
 			?>
 			<tr>
-				<th scope="row"><?php _e( 'Resend Welcome Email',  'user-switching' ); ?></th>
-				<td><a href="<?php echo $link; ?>"><?php _e( 'Resend Welcome Email', 'user-switching' ); ?></a></td>
+				<th scope="row"><?php _e( 'Resend Welcome Email',  'resend-welcome-email' ); ?></th>
+				<td><a href="<?php echo $link; ?>"><?php _e( 'Resend Welcome Email', 'resend-welcome-email' ); ?></a></td>
 			</tr>
 			<?php
 		}

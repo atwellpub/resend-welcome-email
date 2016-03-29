@@ -1,4 +1,4 @@
-=== Resend Welcome Emails ===
+=== Resend Welcome Email ===
 Contributors: adbox, ramiy
 Donate link: hudson.atwell@gmail.com
 License: GPLv2 or later

@@ -187,6 +187,8 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 		public function personal_options( WP_User $user ) {
 			if ( ! ( $link = $this->send_welcome_email_url( $user ) ) ) {
 		public function add_admin_listeners() {
+			add_action( 'admin_notices', array( $this, 'define_notice' ) );
+			add_action( 'network_admin_notices', array( $this, 'define_notice' ) );
 		public function define_notice() {
 		public function send_welcome_email_url( WP_User $user ) {
 		public function resend_welcome_email() {

@@ -167,7 +167,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 	 *  Load Resend_Welcome_Email class in init
 	 */
 	function Load_Resend_Welcome_Email() {
-		$Resend_Welcome_Email = new Resend_Welcome_Email();
 	}
 	add_action( 'admin_init' , 'Load_Resend_Welcome_Email' , 99 );
 }
@@ -194,3 +193,4 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 				<p><?php esc_html_e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
 		public function send_welcome_email_url( WP_User $user ) {
 		public function resend_welcome_email() {
+		new Resend_Welcome_Email();

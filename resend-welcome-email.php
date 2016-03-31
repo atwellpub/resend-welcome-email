@@ -36,7 +36,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 		 */
 		public function __construct() {
 
-			global $wpdb;
 
 			/* Check user permission */
 			if ( ! current_user_can( 'edit_user' ) )
@@ -50,18 +49,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 
 		}
 
-		/**
-		 *  Defines constants
-		 */
-
-			define('RESEND_WELCOME_EMAIL_CURRENT_VERSION', '1.0.1' ); 
-			define('RESEND_WELCOME_EMAIL_LABEL' , 'Resend Welcome Email' ); 
-			define('RESEND_WELCOME_EMAIL_SLUG' , plugin_basename( dirname(__FILE__) ) ); 
-			define('RESEND_WELCOME_EMAIL_FILE' ,  __FILE__ ); 
-			define('RESEND_WELCOME_EMAIL_URLPATH', plugins_url( ' ', __FILE__ ) ); 
-			define('RESEND_WELCOME_EMAIL_PATH', WP_PLUGIN_DIR.'/'.plugin_basename( dirname(__FILE__) ).'/' ); 
-
-		}
 
 		/**
 		 *  Loads hooks and filters selectively

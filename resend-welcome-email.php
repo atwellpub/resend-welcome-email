@@ -105,7 +105,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 			}
 
 			/* Resend welcome email */
-			self::resend_welcome_email();	
 
 			/* Register success notice */
 
@@ -188,6 +187,7 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 			if ( ! isset( $_GET['action'] ) ||
 			     ( 'resend_welcome_email' !== $_GET['action'] )
 			) {
+			$this->resend_welcome_email();
 			add_action( 'admin_notices', array( $this, 'define_notice' ) );
 			add_action( 'network_admin_notices', array( $this, 'define_notice' ) );
 		public function define_notice() {

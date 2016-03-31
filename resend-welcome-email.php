@@ -81,7 +81,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 				return $actions;
 			}
 
-			$actions['send_welcome_email'] = '<a href="' . $link . '">' . __( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
 
 			return $actions;
 		}
@@ -95,8 +94,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 
 			?>
 			<tr>
-				<th scope="row"><?php _e( 'Resend Welcome Email', 'resend-welcome-email' ); ?></th>
-				<td><a href="<?php echo $link; ?>"><?php _e( 'Resend Welcome Email', 'resend-welcome-email' ); ?></a></td>
 			</tr>
 			<?php
 		}
@@ -119,7 +116,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 		 */
 			?>
 			<div class="updated">
-				<p><?php _e( 'Welcome email sent!' , 'resend-welcome-email'); ?></p>
 			</div>
 			<?php			
 		}
@@ -183,8 +179,11 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 			$this->add_admin_listeners();
 		public function filter_user_row_actions( array $actions, WP_User $user ) {
 			if ( ! ( $link = $this->send_welcome_email_url( $user ) ) ) {
+			$actions['send_welcome_email'] = '<a href="' . $link . '">' . esc_html__( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
 		public function personal_options( WP_User $user ) {
 			if ( ! ( $link = $this->send_welcome_email_url( $user ) ) ) {
+				<th scope="row"><?php esc_html_e( 'Resend Welcome Email', 'resend-welcome-email' ); ?></th>
+					<a href="<?php echo $link; ?>"><?php esc_html_e( 'Resend Welcome Email', 'resend-welcome-email' ); ?></a>
 		public function add_admin_listeners() {
 			if ( ! isset( $_GET['action'] ) ||
 			     ( 'resend_welcome_email' !== $_GET['action'] )
@@ -192,5 +191,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 			add_action( 'admin_notices', array( $this, 'define_notice' ) );
 			add_action( 'network_admin_notices', array( $this, 'define_notice' ) );
 		public function define_notice() {
+				<p><?php esc_html_e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
 		public function send_welcome_email_url( WP_User $user ) {
 		public function resend_welcome_email() {

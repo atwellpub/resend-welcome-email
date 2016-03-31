@@ -104,7 +104,6 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 		/**
 		 *  Listens for email send commands and fires them
 		 */
-			if (!isset($_GET['action']) && $_GET['action'] != 'resend_welcome_email' ) {
 				return;
 			}
 
@@ -187,6 +186,9 @@ if ( !class_exists( 'Resend_Welcome_Email' ) ) {
 		public function personal_options( WP_User $user ) {
 			if ( ! ( $link = $this->send_welcome_email_url( $user ) ) ) {
 		public function add_admin_listeners() {
+			if ( ! isset( $_GET['action'] ) ||
+			     ( 'resend_welcome_email' !== $_GET['action'] )
+			) {
 			add_action( 'admin_notices', array( $this, 'define_notice' ) );
 			add_action( 'network_admin_notices', array( $this, 'define_notice' ) );
 		public function define_notice() {

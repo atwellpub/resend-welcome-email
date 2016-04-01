@@ -43,6 +43,9 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 				return;
 			}
 
+			/* Define constants */
+			//self::define_constants();
+
 			//add_filter( 'user_row_actions',  array( $this, 'filter_user_row_actions' ), 10, 2 );
 			add_filter( 'personal_options', array( $this, 'personal_options' ), 10, 2 );
 
@@ -51,6 +54,16 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 
 			/* Adds admin listeners for processing actions */
 			$this->add_admin_listeners();
+		/**
+		 *  Defines constants.
+		 */
+		public static function define_constants() {
+			define( 'RESEND_WELCOME_EMAIL_CURRENT_VERSION', '1.0.1' );
+			define( 'RESEND_WELCOME_EMAIL_LABEL', 'Resend Welcome Email' );
+			define( 'RESEND_WELCOME_EMAIL_SLUG', plugin_basename( dirname( __FILE__ ) ) );
+			define( 'RESEND_WELCOME_EMAIL_FILE', __FILE__ );
+			define( 'RESEND_WELCOME_EMAIL_URLPATH', plugins_url( ' ', __FILE__ ) );
+			define( 'RESEND_WELCOME_EMAIL_PATH', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) . '/' );
 		}
 
 		/**

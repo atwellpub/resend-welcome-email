@@ -19,7 +19,7 @@ This tool was developed to quickly send a user a new password reset link via ema
 This extension has a public GitHub page where users can contribute fixes and improvements.
 
 [Follow Development on GitHub](https://github.com/atwellpub/resend-welcome-email "Follow & Contribute to core development on GitHub")
- |
+
 [Follow Developer on Twitter](https://twitter.com/atwellpub "Follow the developer on Twitter")
 
 == Installation ==

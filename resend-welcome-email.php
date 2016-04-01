@@ -20,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 /**
  * Resend_Welcome_Email
  *
@@ -34,7 +33,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 	class Resend_Welcome_Email {
 
 		/**
-		 * Initiates class.
+		 * Constructor.
 		 */
 		public function __construct() {
 
@@ -46,14 +45,16 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 			/* Define constants */
 			//self::define_constants();
 
-			//add_filter( 'user_row_actions',  array( $this, 'filter_user_row_actions' ), 10, 2 );
-			add_filter( 'personal_options', array( $this, 'personal_options' ), 10, 2 );
+			//add_filter( 'user_row_actions',  array( __CLASS__, 'filter_user_row_actions' ), 10, 2 );
+			add_filter( 'personal_options', array( __CLASS__, 'personal_options' ), 10, 2 );
 
 			/* Load plugin translation files */
 			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 
 			/* Adds admin listeners for processing actions */
-			$this->add_admin_listeners();
+			self::add_admin_listeners();
+		}
+
 		/**
 		 *  Defines constants.
 		 */
@@ -74,8 +75,8 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *
 		 * @return array
 		 */
-		public function filter_user_row_actions( array $actions, WP_User $user ) {
-			if ( ! ( $link = $this->send_welcome_email_url( $user ) ) ) {
+		public static function filter_user_row_actions( array $actions, WP_User $user ) {
+			if ( ! ( $link = self::send_welcome_email_url( $user ) ) ) {
 				return $actions;
 			}
 
@@ -89,8 +90,8 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *
 		 * @param \WP_User $user
 		 */
-		public function personal_options( WP_User $user ) {
-			if ( ! ( $link = $this->send_welcome_email_url( $user ) ) ) {
+		public static function personal_options( WP_User $user ) {
+			if ( ! ( $link = self::send_welcome_email_url( $user ) ) ) {
 				return;
 			}
 
@@ -107,7 +108,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		/**
 		 * Listens for email send commands and fires them.
 		 */
-		public function add_admin_listeners() {
+		public static function add_admin_listeners() {
 			if ( ! isset( $_GET['action'] ) ||
 			     ( 'resend_welcome_email' !== $_GET['action'] )
 			) {
@@ -115,17 +116,17 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 			}
 
 			/* Resend welcome email */
-			$this->resend_welcome_email();
+			self::resend_welcome_email();
 
 			/* Register success notice */
-			add_action( 'admin_notices', array( $this, 'define_notice' ) );
-			add_action( 'network_admin_notices', array( $this, 'define_notice' ) );
+			add_action( 'admin_notices', array( __CLASS__, 'define_notice' ) );
+			add_action( 'network_admin_notices', array( __CLASS__, 'define_notice' ) );
 		}
 
 		/**
 		 * Register admin notice that email has been sent.
 		 */
-		public function define_notice() {
+		public static function define_notice() {
 			?>
 			<div class="updated">
 				<p><?php esc_html_e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
@@ -140,7 +141,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *
 		 * @return string|bool The required URL, or false if there's no old user or the user doesn't have the required capability.
 		 */
-		public function send_welcome_email_url( WP_User $user ) {
+		public static function send_welcome_email_url( WP_User $user ) {
 			return esc_url( wp_nonce_url( add_query_arg( array(
 					'action'  => 'resend_welcome_email',
 					'user_id' => $user->ID,
@@ -154,7 +155,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *
 		 * @return bool|WP_User WP_User object on success, false on failure.
 		 */
-		public function resend_welcome_email() {
+		public static function resend_welcome_email() {
 			if ( ! isset( $_GET['user_id'] ) ) {
 				return false;
 			}

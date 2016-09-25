@@ -7,6 +7,7 @@ Version:     1.1.0
 Author:      adbox
 Author URI:  http://www.twitter.com/atwellpub
 Text Domain: resend-welcome-email
+Domain Path: /languages
 */
 
 

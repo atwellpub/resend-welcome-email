@@ -4,10 +4,10 @@ Plugin Name: Resend Welcome Email
 Plugin URI:  http://www.twitter.com/atwellpub
 Description: Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
 Version:     1.1.0
-Author:      adbox
-Author URI:  http://www.twitter.com/atwellpub
+Author:      Hudson Atwell
+Author URI:  https://github.com/atwellpub
 Text Domain: resend-welcome-email
-Domain Path: /languages
+Domain Path: /assets/lang
 */
 
 
@@ -46,7 +46,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 			/* Define constants */
 			//self::define_constants();
 
-			//add_filter( 'user_row_actions',  array( __CLASS__, 'filter_user_row_actions' ), 10, 2 );
+			add_filter( 'user_row_actions',  array( __CLASS__, 'filter_user_row_actions' ), 10, 2 );
 			add_filter( 'personal_options', array( __CLASS__, 'personal_options' ), 10, 2 );
 
 			/* Load plugin translation files */

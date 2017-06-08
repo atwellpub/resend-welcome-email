@@ -39,7 +39,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		public function __construct() {
 
 			/* Check user permission */
-			if ( ! current_user_can( 'edit_user' ) ) {
+			if ( ! current_user_can( 'edit_users' ) ) {
 				return;
 			}
 

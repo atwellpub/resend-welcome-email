@@ -22,6 +22,10 @@ This extension has a public GitHub page where users can contribute fixes and imp
 
 [Follow Developer on Twitter](https://twitter.com/atwellpub "Follow the developer on Twitter")
 
+= Contributors =
+
+[Tibor Repček](https://github.com/tiborepcek/ "Tibor Repček on GitHub") - translation into slovak language (slovenčina)
+
 == Installation ==
 
 1. Upload `resend-welcome-email` folder to the `/wp-content/plugins/` directory

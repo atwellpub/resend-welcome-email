@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: users, welcome-email, user-management, support
 Requires at least: 4.3.1
 Tested up to: 4.5
-Stable Tag: 1.1.1
+Stable Tag: 1.1.2
 
 Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
 
@@ -29,15 +29,20 @@ This extension has a public GitHub page where users can contribute fixes and imp
 
 == Frequently Asked Questions ==
 
-= Do you provide free support for this plugin =
+= Do you provide support for this plugin =
 
-No. But we have a public github and we do offer paid support. Contact the plugin developer to commission your work.
+Not really. Please open an issue though if you have a problem. I am keeping track with pull requests so fire away.
+
+
 
 == Changelog ==
 
 
+= 1.1.2 =
+* Adding language files sk_SK.po, sk_SK.mo
+
 = 1.1.1 =
-* Adding resend welcome email to user row action link. 
+* Adding resend welcome email to user row action link.
 * Converting edit_user to edit_users to fix soft error.
 
 = 1.1.0 =

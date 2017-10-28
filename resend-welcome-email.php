@@ -130,7 +130,8 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		public static function define_notice() {
 			?>
 			<div class="updated">
-				<p><?php esc_html_e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
+				<?php $current_user = wp_get_current_user(); ?>
+				<p><?php esc_html_e( 'Welcome email sent to user: ', 'resend-welcome-email' ); echo $current_user->user_login; ?></p>
 			</div>
 			<?php
 		}

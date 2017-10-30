@@ -5,7 +5,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: users, welcome-email, user-management, support
 Requires at least: 4.3.1
-Tested up to: 4.5
+Tested up to: 4.8.2
 Stable Tag: 1.1.2
 
 Quickly send a new welcome email and password reset link for a user through the user's profile edit area.

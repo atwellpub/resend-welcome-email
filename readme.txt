@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: users, welcome-email, user-management, support
 Requires at least: 4.3.1
 Tested up to: 4.9
-Stable Tag: 1.1.2
+Stable Tag: 1.1.3
 Requires PHP: 5.3
 
 Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
@@ -40,6 +40,9 @@ Not really. Please open an issue on GitHub though if you have a problem. I am ke
 
 == Changelog ==
 
+
+= 1.1.3 =
+* Updating 'Tested up to' in readme.txt
 
 = 1.1.2 =
 * Adding language files sk_SK.po, sk_SK.mo

@@ -3,9 +3,9 @@
 Plugin Name: Resend Welcome Email
 Plugin URI:  http://www.twitter.com/atwellpub
 Description: Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
-Version:     1.1.2
+Version:     1.1.3
 Author:      Hudson Atwell
-Author URI:  https://github.com/atwellpub
+Author URI:  https://codeable.io/developers/hudson-atwell/?ref=99TG1
 Text Domain: resend-welcome-email
 Domain Path: /assets/lang
 */

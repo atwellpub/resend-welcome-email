@@ -1,26 +1,30 @@
-=== Resend Welcome Emails ===
-Contributors: adbox, ramiy
+=== Resend Welcome Email ===
+Contributors: adbox, ramiy, jazbek, afragen, titus
 Donate link: hudson.atwell@gmail.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: users, welcome-email, user-mangement, support
-Requires at least: 3.8
-Tested up to: 4.4
-Stable Tag: 1.0.3
+Tags: users, welcome-email, user-management, support
+Requires at least: 4.3.1
+Tested up to: 4.8.2
+Stable Tag: 1.1.2
 
-Quickly create a new password and send a welcome email for a user through the user's profile edit area.
+Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
 
 == Description ==
 
-This tool was developed to quickly renew and remind users of their password when they are having trouble logging in. I looked for a way to skip the password regeneration but I don't think it is possible with WordPress.
+This tool was developed to quickly send a user a new password reset link via email when they are having trouble logging in.
 
 = Developers & Designers =
 
-This extension has a plubic GitHub page where users can contribute fixes and improvements.
+This extension has a public GitHub page where users can contribute fixes and improvements.
 
 [Follow Development on GitHub](https://github.com/atwellpub/resend-welcome-email "Follow & Contribute to core development on GitHub")
- | 
+
 [Follow Developer on Twitter](https://twitter.com/atwellpub "Follow the developer on Twitter")
+
+= Contributors =
+
+[Tibor Repček](https://github.com/tiborepcek/ "Tibor Repček on GitHub") - translation into slovak language (slovenčina)
 
 == Installation ==
 
@@ -29,11 +33,27 @@ This extension has a plubic GitHub page where users can contribute fixes and imp
 
 == Frequently Asked Questions ==
 
-= Do you provide free support for this plugin =
+= Do you provide support for this plugin =
 
-No. But we have a public github and we do offer paid support. Contact the plugin developer to commission your work.
+Not really. Please open an issue though if you have a problem. I am keeping track with pull requests so fire away.
+
+
 
 == Changelog ==
+
+
+= 1.1.2 =
+* Adding language files sk_SK.po, sk_SK.mo
+
+= 1.1.1 =
+* Adding resend welcome email to user row action link.
+* Converting edit_user to edit_users to fix soft error.
+
+= 1.1.0 =
+* Security: Escape translated strings.
+* Refactor.
+* Fix: Logic in notice.
+* Add: Multisite compatibility.
 
 = 1.0.3 =
 * Security: Prevent direct access to php files.

@@ -77,7 +77,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 				return $actions;
 			}
 
-			$actions['send_welcome_email'] = '<a href="' . $link . '">' . __( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
+			$actions['send_welcome_email'] = '<a href="' . $link . '">' . esc_html__( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
 
 			return $actions;
 		}
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 			<tr>
 				<th scope="row"><?php esc_html_e( 'Welcome Email', 'resend-welcome-email' ); ?></th>
 				<td>
-					<a href="<?php echo $link; ?>"><?php _e( 'Send New', 'resend-welcome-email' ); ?></a>
+					<a href="<?php echo $link; ?>"><?php esc_html_e( 'Send New', 'resend-welcome-email' ); ?></a>
 				</td>
 			</tr>
 			<?php
@@ -126,7 +126,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		public static function define_notice() {
 			?>
 			<div class="updated">
-				<p><?php _e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
+				<p><?php esc_html_e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
 			</div>
 			<?php
 		}

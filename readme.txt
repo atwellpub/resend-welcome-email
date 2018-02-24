@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: users, welcome-email, user-management, support
 Requires at least: 4.3.1
 Tested up to: 4.9.4
-Stable Tag: 1.1.6
+Stable Tag: 1.1.7
 Requires PHP: 5.3
 
 Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
@@ -39,6 +39,9 @@ This extension has a public GitHub page where users can contribute fixes and imp
 Not really. Please open an issue on GitHub though if you have a problem. I am keeping track with pull requests so fire away.
 
 == Changelog ==
+
+= 1.1.7 =
+* Adding fr_FR translations (shoutout to Thibaut Ninove)
 
 = 1.1.6 =
 * Improving labels

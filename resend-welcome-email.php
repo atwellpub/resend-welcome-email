@@ -3,11 +3,11 @@
 Plugin Name: Resend Welcome Email
 Plugin URI:  http://www.twitter.com/atwellpub
 Description: Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
-Version:     1.1.7
+Version:     1.1.8
 Author:      Hudson Atwell
 Author URI:  https://codeable.io/developers/hudson-atwell/?ref=99TG1
 Text Domain: resend-welcome-email
-Domain Path: /assets/lang
+Domain Path: /languages
 */
 
 
@@ -49,8 +49,6 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 			add_filter( 'user_row_actions',  array( __CLASS__, 'filter_user_row_actions' ), 10, 2 );
 			add_filter( 'personal_options', array( __CLASS__, 'personal_options' ), 10, 2 );
 
-			/* Load plugin translation files */
-			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 
 			/* Adds admin listeners for processing actions */
 			self::add_admin_listeners();
@@ -60,9 +58,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *  Defines constants.
 		 */
 		public static function define_constants() {
-			define( 'RESEND_WELCOME_EMAIL_CURRENT_VERSION', '1.1.7' );
-			define( 'RESEND_WELCOME_EMAIL_LABEL', 'Resend Welcome Email' );
-			define( 'RESEND_WELCOME_EMAIL_SLUG', plugin_basename( dirname( __FILE__ ) ) );
+			define( 'RESEND_WELCOME_EMAIL_CURRENT_VERSION', '1.1.8' );
 			define( 'RESEND_WELCOME_EMAIL_FILE', __FILE__ );
 			define( 'RESEND_WELCOME_EMAIL_URLPATH', plugins_url( ' ', __FILE__ ) );
 			define( 'RESEND_WELCOME_EMAIL_PATH', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) . '/' );
@@ -81,7 +77,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 				return $actions;
 			}
 
-			$actions['send_welcome_email'] = '<a href="' . $link . '">' . esc_html__( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
+			$actions['send_welcome_email'] = '<a href="' . $link . '">' . __( 'Resend Welcome Email', 'resend-welcome-email' ) . '</a>';
 
 			return $actions;
 		}
@@ -100,7 +96,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 			<tr>
 				<th scope="row"><?php esc_html_e( 'Welcome Email', 'resend-welcome-email' ); ?></th>
 				<td>
-					<a href="<?php echo $link; ?>"><?php esc_html_e( 'Send New', 'resend-welcome-email' ); ?></a>
+					<a href="<?php echo $link; ?>"><?php _e( 'Send New', 'resend-welcome-email' ); ?></a>
 				</td>
 			</tr>
 			<?php
@@ -130,7 +126,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		public static function define_notice() {
 			?>
 			<div class="updated">
-				<p><?php esc_html_e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
+				<p><?php _e( 'Welcome email sent!', 'resend-welcome-email' ); ?></p>
 			</div>
 			<?php
 		}
@@ -175,9 +171,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *
 		 * since: 1.0.3
 		 */
-		public function load_textdomain() {
-			load_plugin_textdomain( 'resend-welcome-email' );
-		}
+
 
 	}
 
@@ -188,5 +182,14 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		new Resend_Welcome_Email();
 	}
 
-	add_action( 'admin_init', 'Load_Resend_Welcome_Email', 99 );
+	add_action( 'init', 'Load_Resend_Welcome_Email', 10 );
+
+	/**
+	 * Load text domain
+	 */
+	 add_action( 'plugins_loaded', 'rwe_load_textdomain' );
+	 function rwe_load_textdomain() {
+		load_plugin_textdomain( 'resend-welcome-email' , FALSE, basename( dirname( __FILE__ ) ) . '/languages/');
+	 }
+
 }

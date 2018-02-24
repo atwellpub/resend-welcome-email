@@ -3,7 +3,7 @@
 Plugin Name: Resend Welcome Email
 Plugin URI:  http://www.twitter.com/atwellpub
 Description: Quickly send a new welcome email and password reset link for a user through the user's profile edit area.
-Version:     1.1.8
+Version:     1.1.9
 Author:      Hudson Atwell
 Author URI:  https://codeable.io/developers/hudson-atwell/?ref=99TG1
 Text Domain: resend-welcome-email
@@ -58,7 +58,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		 *  Defines constants.
 		 */
 		public static function define_constants() {
-			define( 'RESEND_WELCOME_EMAIL_CURRENT_VERSION', '1.1.8' );
+			define( 'RESEND_WELCOME_EMAIL_CURRENT_VERSION', '1.1.9' );
 			define( 'RESEND_WELCOME_EMAIL_FILE', __FILE__ );
 			define( 'RESEND_WELCOME_EMAIL_URLPATH', plugins_url( ' ', __FILE__ ) );
 			define( 'RESEND_WELCOME_EMAIL_PATH', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) . '/' );
@@ -182,7 +182,7 @@ if ( ! class_exists( 'Resend_Welcome_Email' ) ) {
 		new Resend_Welcome_Email();
 	}
 
-	add_action( 'init', 'Load_Resend_Welcome_Email', 10 );
+	add_action( 'admin_init', 'Load_Resend_Welcome_Email', 10 );
 
 	/**
 	 * Load text domain

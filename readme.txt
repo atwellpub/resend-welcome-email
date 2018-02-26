@@ -1,5 +1,5 @@
 === Resend Welcome Email ===
-Contributors: adbox, ramiy, jazbek, afragen, titus
+Contributors: adbox, ramiy, jazbek, afragen, titus, tbnv
 Donate link: hudson.atwell@gmail.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,7 @@ This extension has a public GitHub page where users can contribute fixes and imp
 = Contributors =
 
 [Tibor Repček](https://github.com/tiborepcek/ "Tibor Repček on GitHub") - translation into slovak language (slovenčina)
+[Thibaut Ninove](https://twitter.com/tbnv "Thibaut Ninove on Twitter") - French translation
 
 == Installation ==
 

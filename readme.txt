@@ -36,7 +36,7 @@ This extension has a public GitHub page where users can contribute fixes and imp
 
 = Do you provide support for this plugin =
 
-Not really. Please open an issue on GitHub though if you have a problem. I am keeping track with pull requests so fire away.
+Please open a issue on GitHub if you run into an issue. I am accepting pull requests too, so fire away.
 
 == Changelog ==
 
